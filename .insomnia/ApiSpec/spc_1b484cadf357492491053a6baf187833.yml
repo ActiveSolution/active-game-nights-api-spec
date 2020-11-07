@@ -1,0 +1,21 @@
+_id: spc_1b484cadf357492491053a6baf187833
+type: ApiSpec
+parentId: wrk_09bf32b493cc444c91b153385bbb0980
+modified: 1604743110440
+created: 1604742711137
+fileName: Active Game Night
+contents: >-
+  openapi: 3.0.0
+
+  info:
+    description: "API Specification for Active Game Night"
+    version: 0.0.1
+    title: Active Game Night
+    termsOfService: https://github.com/ActiveSolution/ActiveGameNight/blob/master/TERMS.md
+    contact:
+      name: ActiveSolution Sverige AB
+      url: https://github.com/ActiveSolution/ActiveGameNight
+    license:
+      name: GNU GPLv3
+      url: https://www.gnu.org/licenses/gpl-3.0.en.html
+contentType: yaml
