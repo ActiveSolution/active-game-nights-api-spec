@@ -1,10 +1,11 @@
 _id: spc_1b484cadf357492491053a6baf187833
 type: ApiSpec
 parentId: wrk_09bf32b493cc444c91b153385bbb0980
-modified: 1604743110440
+modified: 1604793742714
 created: 1604742711137
 fileName: Active Game Night
-contents: >-
+contents: >+
+  
   openapi: 3.0.0
 
   info:
@@ -18,4 +19,67 @@ contents: >-
     license:
       name: GNU GPLv3
       url: https://www.gnu.org/licenses/gpl-3.0.en.html
+
+      
+  paths:
+    /gamenight:
+      get:
+        tags:
+          - gamenight
+        summary: Returns all game nights
+        description: ""
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/ProposedGameNight"                          
+
+       
+  components:
+    schemas:
+      ProposedGameNight:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          gameVotes:
+            $ref: "#/components/schemas/GameVotes"
+          dateVotes:
+            $ref: "#/components/schemas/DateVotes"
+          proposedBy:
+            type: string
+      GameVotes:
+        type: object
+        additionalProperties:
+          $ref: "#/components/schemas/GameVote"  
+      GameVote:
+        type: object
+        properties: 
+          game: 
+            type: string
+          votes: 
+            type: array
+            items:
+              type: string
+                    
+      DateVotes:
+        type: object
+        additionalProperties:
+          $ref: "#/components/schemas/DateVote"
+      DateVote: 
+        type: object
+        properties:
+          game: 
+            type: string
+          votes:
+            type: array
+            items:
+              type: string
+
+
 contentType: yaml
